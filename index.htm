@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasbih</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <nav>
+        <div class="items name">Tasbih</div>
+    </nav>
+    <div class="label"></div>
+    <div class="buttons">
+        <div class="btn count">Count</div>
+        <div class="btn reset">Reset</div>
+    </div>
+
+    <div class="message">
+        <div class="title">Reset</div>
+        <div class="btns">
+            <div class="btn yes">Yes</div>
+            <div class="btn no">No</div>
+        </div>
+    </div>
+
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var count = 0;
+
+        function disp() {
+            $('.label').text(count);
+        }
+
+        $(document).ready(function () {
+            disp();
+        });
+
+        $('.count').click(function (e) {
+            count++;
+            disp();
+        });
+
+        $('.reset').click(function (e) {
+            $('.message').css('display', 'block');
+            
+            $('.message .yes').click(function (e) {  
+                count = 0;
+                disp();
+                $('.message').css('display', 'none');
+            });
+
+            $('.message .no').click(function (e) { 
+                $('.message').css('display', 'none');
+            });
+        });
+
+        $(window).keyup(function (e) {
+            if (e.key == ' ' || e.key == '+') {
+                count++;
+            } else if (e.key == '0' || e.key == 'Escape') {
+                $('.reset').click();
+            }
+            disp();
+        });
+    </script>
+</body>
+
+</html>

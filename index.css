@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    min-height: 100vh;
+    user-select: none;
+}
+
+nav{
+    display: grid;
+    grid-auto-columns: max-content;
+    background-color: teal;
+}
+
+nav .items{
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 20px;
+}
+
+nav .name{
+    letter-spacing: 1px;
+}
+
+.label{
+    display: grid;
+    place-items: center;
+    font-size: 120px;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.buttons .btn{
+    text-align: center;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.buttons .count{
+    background-color: teal;
+}
+
+.buttons .reset{
+    background-color: tomato;
+}
+
+.message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    display: none;
+}
+
+.message .title{
+    padding: 8px;
+    background-color: teal;
+    color: #fff;
+    font-size: 18px;
+}
+
+.message .btns{
+    display: grid;
+    padding: 24px;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.message .btns .btn{
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.message .btns .yes{
+    background-color: crimson;
+}
+
+.message .btns .no{
+    background-color: seagreen;
+}
